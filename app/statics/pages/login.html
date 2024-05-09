@@ -5,25 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/account.css">
-    <title>Criar conta</title>
+    <title>Login</title>
 </head>
+
 <body>
     <main class="p-5">
         <div>
             <section>
                 <div class="d-flex flex-column ">
                     <span style="font-size: 600%" class="mx-auto material-symbols-outlined">account_circle</span>
-                    <h1 class="text-nowrap fw-bold text-center">Criar login</h1>
+                    <h1 class="text-nowrap fw-bold text-center">Login</h1>
                 </div>
             </section>
             <section>
                 <form class="d-flex flex-column mx-auto" action="">
-                    <input class="form-control mt-2 p-2" type="text" name="name" id="name" placeholder="Nome">
                     <input class="form-control mt-2 p-2" type="email" name="email" id="email" placeholder="Email">
-                    <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel" placeholder="Telefone">
-                    <input class="form-control mt-2 p-2" type="password" name="password" id="password" placeholder="Senha">
-                    <a class="text-end mt-4 text-decoration-none fw-bold" href="login.html">Ja possui conta?</a>
-                    <button class="btn btn-primary mt-4 p-2" type="button">Criar conta</button>
+                    <input class="form-control mt-2 p-2" type="password" name="password" id="password"
+                        placeholder="Senha">
+                    <div class="mt-4 d-flex align-items-center justify-content-between">
+                        <a class="text-decoration-none fw-bold" href="create-account.html">Não possui conta?</a>
+                        <div>
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember">Lembrar de mim</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mt-4 p-2" type="button">Entrar</button>
                 </form>
             </section>
         </div>
