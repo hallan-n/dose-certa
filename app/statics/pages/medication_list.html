@@ -21,20 +21,24 @@
         <div class="d-flex justify-content-between mt-4 mb-4">
             <h1 class="text-nowrap fw-bold">Lista de remédios</h1>
             <div id="add-div">
-                <span id="add" class="material-symbols-outlined p-3 mb-5">add</span>
+                <div id="add">
+                    <span class="add-bt material-symbols-outlined p-2 me-2">menu</span>
+                    <span class="add-bt material-symbols-outlined p-2 me-2">notifications</span>
+                    <span class="add-bt material-symbols-outlined p-3 me-2">add</span>
+                </div>
             </div>
-        </div>        
+        </div>
         <div id="medications" class="d-flex flex-wrap justify-content-between">
 
             <!-- LOOP NO PHP NESSE COMPONENT -->
 
             <div class="remedy align-items-center rounded my-2"
-            style="display: inline-flex; gap: 6px; background-color: rgb(202, 202, 202); overflow: hidden;">
-            <div class="bg-secondary h-100 p-2">
-                <span class="material-symbols-outlined text-light mt-1 px-2">pill</span>
-            </div>
-            <div class="px-2">
-                <p class="m-0 text-secondary" style="font-size: .6rem; text-wrap: nowrap;">12h</p>
+                style="display: inline-flex; gap: 6px; background-color: rgb(202, 202, 202); overflow: hidden;">
+                <div class="bg-secondary h-100 p-2">
+                    <span class="material-symbols-outlined text-light mt-1 px-2">pill</span>
+                </div>
+                <div class="px-2">
+                    <p class="m-0 text-secondary" style="font-size: .6rem; text-wrap: nowrap;">12h</p>
                     <p class="m-0 text-secondary" style="font-size: .8rem; text-wrap: nowrap;">Remédio de pressão</p>
                 </div>
                 <div id="edit" class="h-100 d-flex p-2" style="gap: 6px; cursor: pointer;">
@@ -48,4 +52,5 @@
         </div>
     </main>
 </body>
+
 </html>

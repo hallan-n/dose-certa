@@ -18,19 +18,21 @@ main{
 }
 
 #add{
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.662); 
+    position: fixed;
+    z-index: 1000;
+}
+.add-bt{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.409); 
     cursor: pointer;
     border-radius: 50%;
     background-color: rgb(217, 217, 217);
-    position: fixed;
-    z-index: 1000;
 }
 #add-div{
     display: flex;
     justify-content: end;
 }
 
-#add:hover{
+.add-bt:hover{
     transition: 200ms;
     background-color: rgb(160, 160, 160);
 }
@@ -42,6 +44,7 @@ main{
 .remedy{
     width: 266.34px;
 }
+
 @media (max-width: 768px) {
     #medications{
         display: flex;
