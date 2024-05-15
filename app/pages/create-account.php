@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/account.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/account.css">
     <title>Criar conta</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
                     <input class="form-control mt-2 p-2" type="email" name="email" id="email" placeholder="Email">
                     <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel" placeholder="Telefone">
                     <input class="form-control mt-2 p-2" type="password" name="password" id="password" placeholder="Senha">
-                    <a class="text-end mt-4 text-decoration-none fw-bold" href="login.html">Ja possui conta?</a>
+                    <a class="text-end mt-4 text-decoration-none fw-bold" href="login.php">Ja possui conta?</a>
                     <button class="btn btn-primary mt-4 p-2" type="button">Criar conta</button>
                 </form>
             </section>
