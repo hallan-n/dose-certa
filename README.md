@@ -5,7 +5,6 @@ Nomeado como Dose Certa, o app tem como foco principal notificar o usuário sobr
 para uma nutricionista especializada em tratamento de obesidade, performance física e doenças crônicas, utilizando HTML, CSS e Flexbox.
 
 
-
 ## Atividade proposta
 Aplicação web responsiva voltada para a área da saúde
 
