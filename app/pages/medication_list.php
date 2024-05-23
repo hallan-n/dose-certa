@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/medication_list.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.png">
     <title>Lista de remédios</title>
 </head>
 
