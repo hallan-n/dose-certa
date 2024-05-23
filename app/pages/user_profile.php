@@ -28,7 +28,7 @@
                     <label class="form-label mt-3" for="tel">Telefone</label>
                     <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel">
                     <button class="btn btn-primary mt-4 p-2" type="submit">Salvar</button>
-                    <a href="/" class="btn btn-primary mt-4 p-2" type="submit">Cancelar </a>
+                    <a href="/" class="btn btn-secondary mt-2 p-2" type="submit">Cancelar </a>
                 </form>
             </section>
         </div>
