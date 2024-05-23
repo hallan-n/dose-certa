@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/account.css">
     <link rel="stylesheet" href="../assets/css/user_profile.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.png">
     <title>Criar conta</title>
 </head>
 
