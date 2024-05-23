@@ -11,9 +11,9 @@
 </head>
 
 <body>
+    <?php include "../assets/shared/header.php" ?>
     <main class="p-5 d-flex align-items-center">
-        <div class="w-100">
-            
+        <div class="w-100">            
             <section>
                 <form class="d-flex flex-column mx-auto" action="medication_add.php" method="post">
                     <h1 class="text-nowrap fw-bold">Adicionar remédio</h1>
@@ -39,5 +39,4 @@
         </div>
     </main>
 </body>
-
 </html>

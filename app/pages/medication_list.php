@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +8,8 @@
     <link rel="shortcut icon" href="../assets/images/favicon.png">
     <title>Lista de remédios</title>
 </head>
-
 <body>
-    <header class="bg-secondary p-4 ">
-        <div class="d-flex justify-content-between mx-auto px-3" style="max-width: 900px;">
-            <div style="width: 30px; height: 30px;  background-color: aliceblue; border-radius: 50%;">&nbsp;</div>
-            <span class="fs-1 text-light material-symbols-outlined">account_circle</span>
-        </div>
-    </header>
+    <?php include "../assets/shared/header.php" ?>
     <main class="p-4 mx-auto" style="max-width: 900px;">
         <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>
         <div class="d-flex justify-content-between mt-4 mb-4">
@@ -30,9 +23,6 @@
             </div>
         </div>
         <div id="medications" class="d-flex flex-wrap justify-content-between">
-
-            <!-- LOOP NO PHP NESSE COMPONENT -->
-
             <div class="remedy align-items-center rounded my-2"
                 style="display: inline-flex; gap: 6px; background-color: rgb(202, 202, 202); overflow: hidden;">
                 <div class="bg-secondary h-100 p-2">
@@ -47,11 +37,7 @@
                     <span class="material-symbols-outlined px-2 mt-1" style="font-size: 25px;">edit_square</span>
                 </div>
             </div>
-
-            <!-- LOOP NO PHP NESSE COMPONENT -->
-
         </div>
     </main>
 </body>
-
 </html>
