@@ -30,5 +30,6 @@
             </section>
         </div>
     </main>
+    <?php include "../assets/shared/footer.php" ?>
 </body>
 </html>

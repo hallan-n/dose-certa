@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php endif; ?>
             </section>
         </div>
-        <a href="/pages/medication_list.php" class="d-flex align-items-center justify-content-center text-decoration-none mt-5  ">
+        <a href="/" class="d-flex align-items-center justify-content-center text-decoration-none mt-5  ">
             <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>
             <p class="text-dark ps-1">Voltar</p>
         </a>
