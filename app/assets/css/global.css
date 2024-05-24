@@ -22,3 +22,9 @@
     border-radius: 50%;
     background-color: rgb(217, 217, 217);
 }
+
+@media (max-width: 863px) {
+    #footer-global{
+        display: none;
+    }
+}
