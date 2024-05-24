@@ -16,7 +16,7 @@
         <div class="w-100">            
             <section>
                 <form class="d-flex flex-column mx-auto" action="medication_add.php" method="post">
-                    <h1 class="text-nowrap fw-bold">Adicionar remédio</h1>
+                    <h1 class="text-nowrap fw-bold">Editar Remédio</h1>
                     <label class="form-label mt-3" for="name">Nome</label>
                     <input class="form-control p-2" type="text" name="name" id="name">
                     <label class="form-label mt-3" for="start_date">Data de início</label>
@@ -39,4 +39,5 @@
         </div>
     </main>
 </body>
+
 </html>

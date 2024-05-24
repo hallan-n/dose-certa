@@ -64,6 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/account.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.png">
     <title>Criar conta</title>
 </head>
 <body>
