@@ -1,0 +1,10 @@
+@media (max-width: 900px) {
+    #user_img{
+        display:none ;
+    }
+}
+
+#user_limited{
+    max-width: 1200px; 
+    margin: 0 auto;
+}

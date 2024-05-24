@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/account.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.png">
     <title>Criar conta</title>
 </head>
 
 <body>
+    <?php include "../assets/shared/header.php" ?>
     <main class="p-5 d-flex align-items-center">
-        <div class="w-100">
-            
+        <div class="w-100">            
             <section>
                 <form class="d-flex flex-column mx-auto" action="medication_add.php" method="post">
                     <h1 class="text-nowrap fw-bold">Adicionar remédio</h1>
@@ -38,5 +39,4 @@
         </div>
     </main>
 </body>
-
 </html>
