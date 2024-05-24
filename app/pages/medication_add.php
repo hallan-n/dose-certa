@@ -12,10 +12,13 @@
 
 <body>
     <?php include "../assets/shared/header.php" ?>
-    <main class="p-5 d-flex align-items-center">
+    <main class="p-5 mx-auto" style="max-width: 900px;">
+        <a href="/pages/medication_list.php">
+            <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>
+        </a>
         <div class="w-100">            
             <section>
-                <form class="d-flex flex-column mx-auto" action="medication_add.php" method="post">
+                <form class="d-flex flex-column mx-auto" action="medication_add_confirm.php" method="post">
                     <h1 class="text-nowrap fw-bold">Adicionar remédio</h1>
                     <label class="form-label mt-3" for="name">Nome</label>
                     <input class="form-control p-2" type="text" name="name" id="name">

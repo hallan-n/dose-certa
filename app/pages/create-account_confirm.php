@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Criar conta</title>
 </head>
 <body>
-    <main class="p-5 d-flex align-items-center">
+<main class="p-5 mx-auto d-flex flex-column justify-content-center" style="max-width: 900px;">
         <div class="w-100">
             <section>
                 <div class="d-flex flex-column">
@@ -82,6 +82,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php endif; ?>
             </section>
         </div>
+        <a href="/pages/medication_list.php" class="d-flex align-items-center justify-content-center text-decoration-none mt-5  ">
+            <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>
+            <p class="text-dark ps-1">Voltar</p>
+        </a>
     </main>
 </body>
 </html>

@@ -12,3 +12,13 @@
     margin: 0;
     font-family: "Noto Sans", sans-serif;
 }
+#arrow_back{
+    color: black;
+}
+
+#arrow_back:hover{
+    transition: 200ms;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgb(217, 217, 217);
+}

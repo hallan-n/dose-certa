@@ -7,12 +7,6 @@
     color: rgb(67, 67, 67);
 }
 
-#arrow_back:hover{
-    transition: 200ms;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: rgb(217, 217, 217);
-}
 main{
     position: relative;
 }
@@ -37,15 +31,11 @@ main{
     background-color: rgb(160, 160, 160);
 }
 
-
-
-
-
 .remedy{
     width: 266.34px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 863px) {
     #medications{
         display: flex;
         justify-content: center;
