@@ -2,9 +2,6 @@
 Este projeto consiste em um trabalho acadêmico desenvolvido como parte do currículo da disciplina de Projeto integrador. A tarefa proposta envolve a criação de uma aplicação web responsiva. 
 Nomeado como Dose Certa, o app tem como foco principal notificar o usuário sobre a hora e dose certa de um tratamento médico.
 
-para uma nutricionista especializada em tratamento de obesidade, performance física e doenças crônicas, utilizando HTML, CSS e Flexbox.
-
-
 ## Atividade proposta
 Aplicação web responsiva voltada para a área da saúde
 
