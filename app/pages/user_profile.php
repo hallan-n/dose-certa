@@ -13,8 +13,11 @@
 
 <body>
     <?php include "../assets/shared/header.php" ?>
-    <main class="px-5 d-flex align-items-center flex-column justify-content-center">
-        <div class="w-100 d-flex" id="user_limited">
+    <main class="p-4 mx-auto h-100" style="max-width: 900px;">
+        <a href="/pages/medication_list.php">
+            <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>
+        </a>
+        <div class="w-100 d-flex gap-5 mt-5" id="user_limited">
             <section class="w-100" id="user_img">
                 <img src="../assets/images/account-edit.png" alt="" width="100%" style="max-width: 502px;">
             </section>
@@ -31,11 +34,11 @@
                         <button class="btn btn-primary w-100 p-2" type="submit">Salvar</button>
                         <a href="/" class="btn btn-secondary w-100  p-2" type="submit">Cancelar </a>
                     </div>
+                    <a href="/pages/user_password.php" class="btn btn-danger mt-3 w-100  p-2" type="submit">Alterar senha</a>
                 </form>
             </section>
         </div>
     </main>
     <?php include "../assets/shared/footer.php" ?>
 </body>
-
 </html>

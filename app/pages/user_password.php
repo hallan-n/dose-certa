@@ -13,8 +13,11 @@
 
 <body>
     <?php include "../assets/shared/header.php" ?>
-    <main class="px-5 d-flex align-items-center flex-column justify-content-center">
-        <div class="w-100 d-flex" id="user_limited">
+    <main class="p-4 mx-auto h-100" style="max-width: 900px;">
+        <a href="/pages/medication_list.php">
+            <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>
+        </a>
+        <div class="w-100 d-flex gap-5 mt-5" id="user_limited">
             <section class="w-100" id="user_img">
                 <img src="../assets/images/login.jpg" alt="" width="100%" style="max-width: 502px;">
             </section>
