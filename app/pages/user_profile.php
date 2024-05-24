@@ -19,7 +19,7 @@
                 <img src="../assets/images/account-edit.png" alt="" width="100%" style="max-width: 502px;">
             </section>
             <section class="w-100">
-                <form class="d-flex flex-column mx-auto" action="create-account_confirm.php" method="post">
+                <form class="d-flex flex-column mx-auto" action="" method="post">
                     <h1 class="text-nowrap fw-bold">Editar Perfil</h1>
                     <label class="form-label mt-3" for="text">Nome</label>
                     <input class="form-control mt-2 p-2" type="text" name="name" id="name">
@@ -27,8 +27,15 @@
                     <input class="form-control mt-2 p-2" type="email" name="email" id="email">
                     <label class="form-label mt-3" for="tel">Telefone</label>
                     <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel">
+<<<<<<< HEAD
+                    <div class="mt-3 d-flex gap-3 "> 
+                        <button class="btn btn-primary w-100 p-2" type="submit">Salvar</button>
+                        <a href="/" class="btn btn-secondary w-100  p-2" type="submit">Cancelar </a>
+                    </div>
+=======
                     <button class="btn btn-primary mt-4 p-2" type="submit">Salvar</button>
                     <a href="/" class="btn btn-secondary mt-2 p-2" type="submit">Cancelar </a>
+>>>>>>> main
                 </form>
             </section>
         </div>

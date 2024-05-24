@@ -19,7 +19,11 @@
                 <img src="../assets/images/login.jpg" alt="" width="100%" style="max-width: 502px;">
             </section>
             <section class="w-100">
+<<<<<<< HEAD
+                <form class="d-flex flex-column mx-auto" action="" method="post">
+=======
                 <form class="d-flex flex-column mx-auto" action="create-account_confirm.php" method="post">
+>>>>>>> main
                     <h1 class="text-nowrap fw-bold">Editar senha</h1>
                     <label class="form-label mt-3" for="previous">Senha antiga:</label>
                     <input class="form-control mt-2 p-2" type="password" name="previous" id="previous">
