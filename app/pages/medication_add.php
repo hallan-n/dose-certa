@@ -12,7 +12,7 @@
 
 <body>
     <?php include "../assets/shared/header.php" ?>
-    <main class="p-5 mx-auto h-100" style="max-width: 900px;">
+    <main class="p-4 mx-auto h-100" style="max-width: 900px;">
         <a href="/pages/medication_list.php">
             <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>
         </a>

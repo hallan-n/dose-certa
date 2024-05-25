@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $results = null;
     $dbPath = 'database.sqlite';
     try {
         $conn = new PDO("sqlite:$dbPath");
@@ -41,23 +42,25 @@
         </div>
         <div id="medications" class="d-flex flex-wrap gap-2">
             <?php
-                for ($i = 0; $i < count($results); $i++) {
-                    echo <<<HTML
-                    <div class="remedy align-items-center rounded"
-                        style="display: inline-flex; gap: 6px; background-color: rgb(202, 202, 202); overflow: hidden;">
-                        <div class="bg-secondary h-100 p-2">
-                            <span class="material-symbols-outlined text-light mt-1 px-2">pill</span>
+                if ($results != null) {
+                    for ($i = 0; $i < count($results); $i++) {
+                        echo <<<HTML
+                        <div class="remedy align-items-center rounded"
+                            style="display: inline-flex; gap: 6px; background-color: rgb(202, 202, 202); overflow: hidden;">
+                            <div class="bg-secondary h-100 p-2">
+                                <span class="material-symbols-outlined text-light mt-1 px-2">pill</span>
+                            </div>
+                            <div class="px-2 me-auto">
+                                <p class="m-0 text-secondary" style="font-size: .6rem; text-wrap: nowrap;">12h</p>
+                                <p class="m-0 text-secondary" style="font-size: .8rem; text-wrap: nowrap;">{$results[$i]['name']}</p>
+                            </div>
+                            <a href="/pages/medication_edit.php" id="edit" class="h-100 d-flex p-2 gap-2 text-decoration-none" style="cursor: pointer;">
+                                <div class="bg-secondary" style="width: 2px;">&nbsp;</div>
+                                <span class="material-symbols-outlined px-2 mt-1" style="font-size: 25px;">edit_square</span>
+                            </a>
                         </div>
-                        <div class="px-2 me-auto">
-                            <p class="m-0 text-secondary" style="font-size: .6rem; text-wrap: nowrap;">12h</p>
-                            <p class="m-0 text-secondary" style="font-size: .8rem; text-wrap: nowrap;">{$results[$i]['name']}</p>
-                        </div>
-                        <a href="/pages/medication_edit.php" id="edit" class="h-100 d-flex p-2 gap-2 text-decoration-none" style="cursor: pointer;">
-                            <div class="bg-secondary" style="width: 2px;">&nbsp;</div>
-                            <span class="material-symbols-outlined px-2 mt-1" style="font-size: 25px;">edit_square</span>
-                        </a>
-                    </div>
-                    HTML;
+                        HTML;
+                    }
                 }
             ?>
         </div>
