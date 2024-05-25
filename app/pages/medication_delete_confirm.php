@@ -1,46 +1,22 @@
 <?php
 $message = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $name = $_POST['name'];
-    $start_date = $_POST['start_date'];
-    $end_date = $_POST['end_date'];
-    $period = $_POST['period'];
-    $dosage = $_POST['dosage'];
-    
-    if (empty($name) || empty($start_date) || empty($end_date) || empty($period) || empty($dosage)) {
-        $message = "Todos os campos são obrigatórios.";
-    } else {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $id = $_GET["id"];
         $dbPath = 'database.sqlite';
         try {
             $conn = new PDO("sqlite:$dbPath");
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $createTableQuery = "
-                CREATE TABLE IF NOT EXISTS medication (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name VARCHAR NOT NULL,
-                    start_date VARCHAR NOT NULL,
-                    end_date VARCHAR NOT NULL,
-                    period VARCHAR NOT NULL,
-                    dosage VARCHAR NOT NULL
-                )
-            ";
-            $conn->exec($createTableQuery);
-            $stmt = $conn->prepare("INSERT INTO medication (name,start_date,end_date,period,dosage) VALUES (:name, :start_date, :end_date, :period, :dosage)");
-            $stmt->bindParam(':name',$name);
-            $stmt->bindParam(':start_date',$start_date);
-            $stmt->bindParam(':end_date',$end_date);
-            $stmt->bindParam(':period',$period);
-            $stmt->bindParam(':dosage',$dosage);
+            $query = "DELETE FROM medication WHERE id = ".$id;
+            $stmt = $conn->prepare($query);
             $stmt->execute();
-            $message = "Adicionado o remédio.";
+            $message = "Remédio deletado da lista";
         } catch (PDOException $e) {
             $message = "Erro: " . $e->getMessage();
         }
         $conn = null;
     }
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -58,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="w-100">
             <section>
                 <div class="d-flex flex-column">
-                    <span style="font-size: 600%" class="mx-auto material-symbols-outlined">check_circle</span>
-                    <h1 class="text-nowrap fw-bold text-center">Confirmação de adição de medicamento</h1>
+                    <span style="font-size: 600%" class="mx-auto material-symbols-outlined">delete_forever</span>
+                    <h1 class="text-nowrap fw-bold text-center">Confirmação de exclusão de medicamento</h1>
                 </div>
             </section>
             <section>
