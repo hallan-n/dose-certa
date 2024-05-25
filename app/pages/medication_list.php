@@ -52,10 +52,10 @@
                             <p class="m-0 text-secondary" style="font-size: .6rem; text-wrap: nowrap;">12h</p>
                             <p class="m-0 text-secondary" style="font-size: .8rem; text-wrap: nowrap;">{$results[$i]['name']}</p>
                         </div>
-                        <div id="edit" class="h-100 d-flex p-2" style="gap: 6px; cursor: pointer;">
+                        <a href="/pages/medication_edit.php" id="edit" class="h-100 d-flex p-2 gap-2 text-decoration-none" style="cursor: pointer;">
                             <div class="bg-secondary" style="width: 2px;">&nbsp;</div>
                             <span class="material-symbols-outlined px-2 mt-1" style="font-size: 25px;">edit_square</span>
-                        </div>
+                        </a>
                     </div>
                     HTML;
                 }
