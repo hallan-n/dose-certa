@@ -44,6 +44,7 @@
             <?php
                 if ($results != null) {
                     for ($i = 0; $i < count($results); $i++) {
+                        $id = htmlspecialchars($results[$i]["id"]);
                         echo <<<HTML
                         <div class="remedy align-items-center rounded"
                             style="display: inline-flex; gap: 6px; background-color: rgb(202, 202, 202); overflow: hidden;">
@@ -54,7 +55,7 @@
                                 <p class="m-0 text-secondary" style="font-size: .6rem; text-wrap: nowrap;">12h</p>
                                 <p class="m-0 text-secondary" style="font-size: .8rem; text-wrap: nowrap;">{$results[$i]['name']}</p>
                             </div>
-                            <a href="/pages/medication_edit.php" id="edit" class="h-100 d-flex p-2 gap-2 text-decoration-none" style="cursor: pointer;">
+                            <a href="/pages/medication_edit.php?id=$id" id="edit" class="h-100 d-flex p-2 gap-2 text-decoration-none" style="cursor: pointer;">
                                 <div class="bg-secondary" style="width: 2px;">&nbsp;</div>
                                 <span class="material-symbols-outlined px-2 mt-1" style="font-size: 25px;">edit_square</span>
                             </a>

@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $query = "DELETE FROM medication WHERE id = ".$id;
             $stmt = $conn->prepare($query);
             $stmt->execute();
-            $message = "Adicionado o remédio.";
+            $message = "Remédio deletado da lista";
         } catch (PDOException $e) {
             $message = "Erro: " . $e->getMessage();
         }
@@ -34,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         <div class="w-100">
             <section>
                 <div class="d-flex flex-column">
-                    <span style="font-size: 600%" class="mx-auto material-symbols-outlined">account_circle</span>
-                    <h1 class="text-nowrap fw-bold text-center">Confirmação de adição de medicamento</h1>
+                    <span style="font-size: 600%" class="mx-auto material-symbols-outlined">delete_forever</span>
+                    <h1 class="text-nowrap fw-bold text-center">Confirmação de exclusão de medicamento</h1>
                 </div>
             </section>
             <section>
