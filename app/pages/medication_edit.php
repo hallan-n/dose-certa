@@ -38,7 +38,7 @@
                     <input class="form-control p-2" type="text" name="dosage" id="dosage">
                     <button class="btn btn-primary mt-4 p-2" type="submit">Confirmar</button>
                     <div class="d-flex gap-2">
-                        <a href="/pages/medication_list.php" class="btn btn-danger mt-2 p-2 w-100">Exluir</a>
+                        <a href="/pages/medication_delete_confirm.php" class="btn btn-danger mt-2 p-2 w-100">Exluir</a>
                         <a href="/pages/medication_list.php" class="btn btn-secondary mt-2 p-2 w-100">Cancelar</a>
                     </div>
                 </form>
