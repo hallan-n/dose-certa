@@ -26,6 +26,10 @@
                     <input class="form-control p-2" type="date" name="start_date" id="start_date">
                     <label class="form-label mt-3" for="end_date">Data de término</label>
                     <input class="form-control p-2" type="date" name="end_date" id="end_date">
+
+                    <label class="form-label mt-3" for="hora_inicio">Hora de Início</label>
+                    <input type="number" class="form-control p-2" name="hora_inicio" id="period" min="0" max="23" placeholder="Selecione ou digite a hora entre 0 e 23" />
+
                     <label class="form-label mt-3" for="period">Período</label>
                     <select class="form-select p-2" name="period" id="period">
                         <option selected disabled>Selecione ...</option>

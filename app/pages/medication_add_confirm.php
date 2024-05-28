@@ -6,9 +6,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
+    $hora_inicio = $_POST['hora_inicio'];
     $period = $_POST['period'];
     $dosage = $_POST['dosage'];
     
+    $start_datetime = $start_date . " " . str_pad($hora_inicio, 2, '0', STR_PAD_LEFT) . ":00:00" ;
+    $end_datetime = $end_date . " 23:00:00";
+
+
     if (empty($name) || empty($start_date) || empty($end_date) || empty($period) || empty($dosage)) {
         $message = "Todos os campos são obrigatórios.";
     } else {
@@ -29,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conn->exec($createTableQuery);
             $stmt = $conn->prepare("INSERT INTO medication (name,start_date,end_date,period,dosage) VALUES (:name, :start_date, :end_date, :period, :dosage)");
             $stmt->bindParam(':name',$name);
-            $stmt->bindParam(':start_date',$start_date);
-            $stmt->bindParam(':end_date',$end_date);
+            $stmt->bindParam(':start_date',$start_datetime);
+            $stmt->bindParam(':end_date',$end_datetime);
             $stmt->bindParam(':period',$period);
             $stmt->bindParam(':dosage',$dosage);
             $stmt->execute();
