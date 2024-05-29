@@ -28,7 +28,7 @@
                     <input class="form-control p-2" type="date" name="end_date" id="end_date">
 
                     <label class="form-label mt-3" for="hora_inicio">Hora de Início</label>
-                    <input type="number" class="form-control p-2" name="hora_inicio" id="period" min="0" max="23" placeholder="Selecione ou digite a hora entre 0 e 23" />
+                    <input oninput="setMaxTime(this, '23:00')" type="time" class="form-control p-2" name="hora_inicio" id="hora_inicio" min="0" max="23" placeholder="Digite a hora entre 0 e 23" />
 
                     <label class="form-label mt-3" for="period">Período</label>
                     <select class="form-select p-2" name="period" id="period">
@@ -46,5 +46,6 @@
         </div>
     </main>
     <?php include "../assets/shared/footer.php" ?>
+    <script src="../assets/js/untils.js"></script>
 </body>
 </html>
