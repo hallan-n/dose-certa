@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <main class="p-5 d-flex align-items-center">
         <div class="w-100">
             <section>
-                <div class="d-flex flex-column ">
+                <div class="d-flex flex-column mb-4">
                     <span style="font-size: 600%" class="mx-auto material-symbols-outlined">account_circle</span>
                     <h1 class="text-nowrap fw-bold text-center">Login</h1>
                 </div>
@@ -84,6 +84,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </section>
         </div>
     </main>
-    <?php include "../assets/shared/footer.php" ?>
 </body>
 </html>

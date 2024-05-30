@@ -44,13 +44,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             <section>
                 <form class="d-flex flex-column mx-auto" action="medication_edit_confirm.php" method="post">
                     <h1 class="text-nowrap fw-bold">Editar Remédio</h1>
-                    <input class="form-control p-2" type="hidden" name="id" id="id" value="<?php echo htmlspecialchars($results[0]['id']); ?>"/>
+                    <input class="form-control p-2" type="hidden" name="id" id="id" value="<?php echo htmlspecialchars($results[0]['id']); ?>" required/>
                     <label class="form-label mt-3" for="name">Nome</label>
-                    <input class="form-control p-2" type="text" name="name" id="name" value="<?php echo htmlspecialchars($results[0]['name']); ?>"/>
+                    <input class="form-control p-2" type="text" name="name" id="name" value="<?php echo htmlspecialchars($results[0]['name']); ?>" required/>
                     <label class="form-label mt-3" for="start_date">Data de início</label>
-                    <input class="form-control p-2" type="date" name="start_date" id="start_date" value="<?php echo $start_date_split[0]; ?>">
+                    <input class="form-control p-2" type="date" name="start_date" id="start_date" value="<?php echo $start_date_split[0]; ?>" required>
                     <label class="form-label mt-3" for="end_date">Data de término</label>
-                    <input class="form-control p-2" type="date" name="end_date" id="end_date" value="<?php echo $end_date_split[0]; ?>">
+                    <input class="form-control p-2" type="date" name="end_date" id="end_date" value="<?php echo $end_date_split[0]; ?>" required/>
 
                     <label class="form-label mt-3" for="hora_inicio">Hora de Início</label>
                     <input type="time"
@@ -64,14 +64,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
                     <label class="form-label mt-3" for="period">Período</label>
                     <select class="form-select p-2" name="period" id="period" value="<?php echo htmlspecialchars($array[0]); ?>">
-                        <option  disabled>Selecione ...</option>
+                        <option disabled required>Selecione...</option>
                         <option value="4"<?php if (htmlspecialchars($results[0]['period'])=='4')echo'selected'; ?>>Cada 4 horas</option>
                         <option value="6"<?php if (htmlspecialchars($results[0]['period'])=='6')echo'selected'; ?>>Cada 6 horas</option>
                         <option value="8"<?php if (htmlspecialchars($results[0]['period'])=='8')echo'selected'; ?>>Cada 8 horas</option>
                         <option value="12"<?php if (htmlspecialchars($results[0]['period'])=='12')echo'selected'; ?>>Cada 12 horas</option>
                     </select>
                     <label class="form-label mt-3" for="dosage">Dosagem</label>
-                    <input class="form-control p-2" type="text" name="dosage" id="dosage" value="<?php echo htmlspecialchars($results[0]['dosage']); ?>">
+                    <input class="form-control p-2" type="text" name="dosage" id="dosage" value="<?php echo htmlspecialchars($results[0]['dosage']); ?>" required>
                     <button class="btn btn-primary mt-4 p-2" type="submit">Confirmar</button>
                     <div class="d-flex gap-2">
                         <label for="teste" class="btn btn-danger mt-2 p-2 w-100">Exluir</label>

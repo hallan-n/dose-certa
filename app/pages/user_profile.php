@@ -44,11 +44,11 @@
                 <form class="d-flex flex-column mx-auto" action="user_profile_confirm.php" method="post">
                     <h1 class="text-nowrap fw-bold">Editar Perfil</h1>
                     <label class="form-label mt-3" for="text">Nome</label>
-                    <input class="form-control mt-2 p-2" type="text" name="name" id="name" value="<?php echo $results[0]['name']; ?>">
+                    <input class="form-control mt-2 p-2" type="text" name="name" id="name" value="<?php echo $results[0]['name']; ?>" required>
                     <label class="form-label mt-3" for="email">Email</label>
-                    <input class="form-control mt-2 p-2" type="email" name="email" id="email" value="<?php echo $results[0]['email']; ?>">
+                    <input class="form-control mt-2 p-2" type="email" name="email" id="email" value="<?php echo $results[0]['email']; ?>" required>
                     <label class="form-label mt-3" for="tel">Telefone</label>
-                    <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel" value="<?php echo $results[0]['tel']; ?>">
+                    <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel" value="<?php echo $results[0]['tel']; ?>" required>
                     <div class="mt-3 d-flex gap-3 "> 
                         <button class="btn btn-primary w-100 p-2" type="submit">Salvar</button>
                         <a href="/pages/medication_list.php" class="btn btn-secondary w-100  p-2" type="submit">Cancelar </a>

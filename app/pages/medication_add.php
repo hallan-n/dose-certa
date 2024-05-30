@@ -24,7 +24,7 @@
                 <form class="d-flex flex-column mx-auto" action="medication_add_confirm.php" method="post">
                     <h1 class="text-nowrap fw-bold">Adicionar remédio</h1>
                     <label class="form-label mt-3" for="name">Nome</label>
-                    <input class="form-control p-2" type="text" name="name" id="name" required>
+                    <input class="form-control p-2" type="text" name="name" id="name" minlength="3" maxlength="255" required>
                     <label class="form-label mt-3" for="start_date">Data de início</label>
                     <input class="form-control p-2" type="date" name="start_date" id="start_date" required>
                     <label class="form-label mt-3" for="end_date">Data de término</label>
@@ -34,35 +34,23 @@
                     <input type="time"
                         class="form-control p-2"
                         name="hora_inicio"
-                        id="hora_inicio"
-                        min="0" max="23"
-                        placeholder="Digite a hora entre 0 e 23" required/>
+                        id="hora_inicio" required/>
 
                     <label class="form-label mt-3" for="period">Período</label>
                     <select class="form-select p-2" name="period" id="period" required>
-                        <option selected disabled>Selecione ...</option>
+                        <option selected disabled value="">Selecione ...</option>
                         <option value="4">Cada 4 horas</option>
                         <option value="6">Cada 6 horas</option>
                         <option value="8">Cada 8 horas</option>
                         <option value="12">Cada 12 horas</option>
                     </select>
                     <label class="form-label mt-3" for="dosage">Dosagem</label>
-                    <input class="form-control p-2" type="text" name="dosage" id="dosage" required>
+                    <input class="form-control p-2" type="text" name="dosage" id="dosage" required minlength="2" maxlength="255">
                     <button class="btn btn-primary mt-4 p-2" type="submit">Confirmar</button>
                 </form>
             </section>
         </div>
     </main>
     <?php include "../assets/shared/footer.php" ?>
-    <script>
-        function setMaxTime(element, maxTime){
-            const [maxHours, maxMinutes] = maxTime.split(':').map(Number);
-            const [hours, minutes] = element.value.split(':').map(Number);
-
-            if (hours > maxHours || (hours === maxHours && minutes > maxMinutes)) {
-                element.value = maxTime; 
-            }
-        }
-    </script>
 </body>
 </html>
