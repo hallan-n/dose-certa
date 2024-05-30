@@ -10,9 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $period = $_POST['period'];
     $dosage = $_POST['dosage'];
     
-    $start_datetime = $start_date . " " . str_pad($hora_inicio, 2, '0', STR_PAD_LEFT) . ":00:00" ;
-    $end_datetime = $end_date . " 23:00:00";
-
+    $start_datetime = $start_date . " " .  $hora_inicio . ":00" ;
+    $end_datetime = $end_date . " 23:59:00";
 
     if (empty($name) || empty($start_date) || empty($end_date) || empty($period) || empty($dosage)) {
         $message = "Todos os campos são obrigatórios.";

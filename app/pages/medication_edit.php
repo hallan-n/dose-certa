@@ -11,6 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $start_date_split = explode(" ", $results[0]['start_date']);
+            $end_date_split = explode(" ", $results[0]['end_date']);
+
         } catch (PDOException $e) {
             $message = "Erro: " . $e->getMessage();
         }
@@ -39,16 +43,30 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         </a>
         <div class="w-100">            
             <section>
-                <form class="d-flex flex-column mx-auto" action="medication_add.php" method="post">
+                <form class="d-flex flex-column mx-auto" action="medication_edit_confirm.php" method="post">
                     <h1 class="text-nowrap fw-bold">Editar Remédio</h1>
+
+                    <input class="form-control p-2" type="hidden" name="id" id="id" value="<?php echo htmlspecialchars($results[0]['id']); ?>"/>
+
                     <label class="form-label mt-3" for="name">Nome</label>
                     <input class="form-control p-2" type="text" name="name" id="name" value="<?php echo htmlspecialchars($results[0]['name']); ?>"/>
                     <label class="form-label mt-3" for="start_date">Data de início</label>
-                    <input class="form-control p-2" type="date" name="start_date" id="start_date" value="<?php echo htmlspecialchars($results[0]['start_date']); ?>">
+                    <input class="form-control p-2" type="date" name="start_date" id="start_date" value="<?php echo $start_date_split[0]; ?>">
                     <label class="form-label mt-3" for="end_date">Data de término</label>
-                    <input class="form-control p-2" type="date" name="end_date" id="end_date" value="<?php echo htmlspecialchars($results[0]['end_date']); ?>">
+                    <input class="form-control p-2" type="date" name="end_date" id="end_date" value="<?php echo $end_date_split[0]; ?>">
+
+                    <label class="form-label mt-3" for="hora_inicio">Hora de Início</label>
+                    <input type="time"
+                        class="form-control p-2"
+                        name="hora_inicio"
+                        id="hora_inicio"
+                        min="0" max="23"
+                        placeholder="Digite a hora entre 0 e 23" 
+                        value="<?php echo $start_date_split[1];?>"
+                        required/>
+
                     <label class="form-label mt-3" for="period">Período</label>
-                    <select class="form-select p-2" name="period" id="period" value="<?php echo htmlspecialchars($results[0]['period']); ?>">
+                    <select class="form-select p-2" name="period" id="period" value="<?php echo htmlspecialchars($array[0]); ?>">
                         <option  disabled>Selecione ...</option>
                         <option value="4"<?php if (htmlspecialchars($results[0]['period'])=='4')echo'selected'; ?>>Cada 4 horas</option>
                         <option value="6"<?php if (htmlspecialchars($results[0]['period'])=='6')echo'selected'; ?>>Cada 6 horas</option>
@@ -63,6 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                         <a href="/pages/medication_list.php" class="btn btn-secondary mt-2 p-2 w-100">Cancelar</a>
                     </div>
                 </form>
+                
             </section>
         </div>
     </main>

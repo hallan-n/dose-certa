@@ -21,17 +21,22 @@
                 <form class="d-flex flex-column mx-auto" action="medication_add_confirm.php" method="post">
                     <h1 class="text-nowrap fw-bold">Adicionar remédio</h1>
                     <label class="form-label mt-3" for="name">Nome</label>
-                    <input class="form-control p-2" type="text" name="name" id="name">
+                    <input class="form-control p-2" type="text" name="name" id="name" required>
                     <label class="form-label mt-3" for="start_date">Data de início</label>
-                    <input class="form-control p-2" type="date" name="start_date" id="start_date">
+                    <input class="form-control p-2" type="date" name="start_date" id="start_date" required>
                     <label class="form-label mt-3" for="end_date">Data de término</label>
-                    <input class="form-control p-2" type="date" name="end_date" id="end_date">
+                    <input class="form-control p-2" type="date" name="end_date" id="end_date" required>
 
                     <label class="form-label mt-3" for="hora_inicio">Hora de Início</label>
-                    <input oninput="setMaxTime(this, '23:00')" type="time" class="form-control p-2" name="hora_inicio" id="hora_inicio" min="0" max="23" placeholder="Digite a hora entre 0 e 23" />
+                    <input type="time"
+                        class="form-control p-2"
+                        name="hora_inicio"
+                        id="hora_inicio"
+                        min="0" max="23"
+                        placeholder="Digite a hora entre 0 e 23" required/>
 
                     <label class="form-label mt-3" for="period">Período</label>
-                    <select class="form-select p-2" name="period" id="period">
+                    <select class="form-select p-2" name="period" id="period" required>
                         <option selected disabled>Selecione ...</option>
                         <option value="4">Cada 4 horas</option>
                         <option value="6">Cada 6 horas</option>
@@ -39,13 +44,22 @@
                         <option value="12">Cada 12 horas</option>
                     </select>
                     <label class="form-label mt-3" for="dosage">Dosagem</label>
-                    <input class="form-control p-2" type="text" name="dosage" id="dosage">
+                    <input class="form-control p-2" type="text" name="dosage" id="dosage" required>
                     <button class="btn btn-primary mt-4 p-2" type="submit">Confirmar</button>
                 </form>
             </section>
         </div>
     </main>
     <?php include "../assets/shared/footer.php" ?>
-    <script src="../assets/js/untils.js"></script>
+    <script>
+        function setMaxTime(element, maxTime){
+            const [maxHours, maxMinutes] = maxTime.split(':').map(Number);
+            const [hours, minutes] = element.value.split(':').map(Number);
+
+            if (hours > maxHours || (hours === maxHours && minutes > maxMinutes)) {
+                element.value = maxTime; 
+            }
+        }
+    </script>
 </body>
 </html>

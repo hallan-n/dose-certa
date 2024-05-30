@@ -3,15 +3,44 @@ $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    $id = $_POST['id'];
     $name = $_POST['name'];
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
     $hora_inicio = $_POST['hora_inicio'];
     $period = $_POST['period'];
     $dosage = $_POST['dosage'];
-    
-    $start_datetime = $start_date . " " . str_pad($hora_inicio, 2, '0', STR_PAD_LEFT) . ":00:00" ;
-    $end_datetime = $end_date . " 23:00:00";
+
+    $start_datetime = $start_date . " " .  $hora_inicio;
+    $end_datetime = $end_date . " 23:59:00";
+
+
+
+
+    if (empty($name) || empty($start_date) || empty($end_date) || empty($period) || empty($dosage)) {
+        $message = "Todos os campos são obrigatórios.";
+    } else {
+        $dbPath = 'database.sqlite';
+        try {
+            $conn = new PDO("sqlite:$dbPath");
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $conn->prepare("UPDATE medication SET name = :name, start_date = :start_date, end_date = :end_date, period = :period, dosage = :dosage WHERE id = :id");
+
+            $stmt->bindParam(':id', $id);
+            $stmt->bindParam(':name', $name);
+            $stmt->bindParam(':start_date', $start_datetime);
+            $stmt->bindParam(':end_date', $end_datetime);
+            $stmt->bindParam(':period', $period);
+            $stmt->bindParam(':dosage', $dosage);
+            
+            $stmt->execute();
+            $message = "Editado o remédio.";
+        } catch (PDOException $e) {
+            $message = "Erro: " . $e->getMessage();
+        }
+        $conn = null;
+    }
 
     
 }
