@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <section>
                 <div class="d-flex flex-column">
                     <span style="font-size: 600%" class="mx-auto material-symbols-outlined">delete_forever</span>
-                    <h1 class="text-nowrap fw-bold text-center">Confirmação de exclusão de medicamento</h1>
+                    <h1 class="fw-bold text-center">Confirmação de exclusão de medicamento</h1>
                 </div>
             </section>
             <section>

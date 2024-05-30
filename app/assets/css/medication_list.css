@@ -12,6 +12,7 @@ main{
 }
 
 #add{
+    top: 15%;
     position: fixed;
     z-index: 1000;
 }
