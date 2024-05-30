@@ -2,30 +2,28 @@
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        $id = $_GET["id"];
-        $dbPath = 'database.sqlite';
-        try {
-            $conn = new PDO("sqlite:$dbPath");
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "SELECT * FROM medication WHERE id=".$id;
-            $stmt = $conn->prepare($sql);
-            $stmt->execute();
-            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $id = $_GET["id"];
+    $dbPath = 'database.sqlite';
+    try {
+        $conn = new PDO("sqlite:$dbPath");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "SELECT * FROM medication WHERE id=".$id;
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $start_date_split = explode(" ", $results[0]['start_date']);
-            $end_date_split = explode(" ", $results[0]['end_date']);
+        $start_date_split = explode(" ", $results[0]['start_date']);
+        $end_date_split = explode(" ", $results[0]['end_date']);
 
-        } catch (PDOException $e) {
-            $message = "Erro: " . $e->getMessage();
-        }
-        $conn = null;
+    } catch (PDOException $e) {
+        $message = "Erro: " . $e->getMessage();
     }
+    $conn = null;
+}
 
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,9 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             <section>
                 <form class="d-flex flex-column mx-auto" action="medication_edit_confirm.php" method="post">
                     <h1 class="text-nowrap fw-bold">Editar Remédio</h1>
-
                     <input class="form-control p-2" type="hidden" name="id" id="id" value="<?php echo htmlspecialchars($results[0]['id']); ?>"/>
-
                     <label class="form-label mt-3" for="name">Nome</label>
                     <input class="form-control p-2" type="text" name="name" id="name" value="<?php echo htmlspecialchars($results[0]['name']); ?>"/>
                     <label class="form-label mt-3" for="start_date">Data de início</label>
@@ -77,15 +73,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <input class="form-control p-2" type="text" name="dosage" id="dosage" value="<?php echo htmlspecialchars($results[0]['dosage']); ?>">
                     <button class="btn btn-primary mt-4 p-2" type="submit">Confirmar</button>
                     <div class="d-flex gap-2">
-                        <a href="<?php echo '/pages/medication_delete_confirm.php?id='.htmlspecialchars($results[0]['id'])?>" class="btn btn-danger mt-2 p-2 w-100">Exluir</a>
+                        <label for="teste" class="btn btn-danger mt-2 p-2 w-100">Exluir</label>
                         <a href="/pages/medication_list.php" class="btn btn-secondary mt-2 p-2 w-100">Cancelar</a>
                     </div>
                 </form>
-                
+                <form action="medication_delete_confirm.php" method="post" style="display: none;">
+                    <input type="hidden" name="id" id="id" value="<?php echo htmlspecialchars($results[0]['id']); ?>"/>
+                    <button type="submit" id="teste">Enviar teste</button>
+                </form>
             </section>
         </div>
     </main>
     <?php include "../assets/shared/footer.php" ?>
 </body>
-
 </html>

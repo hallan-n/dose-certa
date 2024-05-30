@@ -1,21 +1,21 @@
 <?php
 $message = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        $id = $_GET["id"];
-        $dbPath = 'database.sqlite';
-        try {
-            $conn = new PDO("sqlite:$dbPath");
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $query = "DELETE FROM medication WHERE id = ".$id;
-            $stmt = $conn->prepare($query);
-            $stmt->execute();
-            $message = "Remédio deletado da lista";
-        } catch (PDOException $e) {
-            $message = "Erro: " . $e->getMessage();
-        }
-        $conn = null;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST["id"];
+    $dbPath = 'database.sqlite';
+    try {
+        $conn = new PDO("sqlite:$dbPath");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $query = "DELETE FROM medication WHERE id = ".$id;
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $message = "Remédio deletado da lista";
+    } catch (PDOException $e) {
+        $message = "Erro: " . $e->getMessage();
     }
+    $conn = null;
+}
 
 ?>
 

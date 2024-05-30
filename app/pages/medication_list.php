@@ -52,7 +52,7 @@
                                 <span class="material-symbols-outlined text-light mt-1 px-2">pill</span>
                             </div>
                             <div class="px-2 me-auto">
-                                <p class="m-0 text-secondary" style="font-size: .6rem; text-wrap: nowrap;">12h</p>
+                                <p class="m-0 text-secondary" style="font-size: .6rem; text-wrap: nowrap;">A cada {$results[$i]['period']}h</p>
                                 <p class="m-0 text-secondary" style="font-size: .8rem; text-wrap: nowrap;">{$results[$i]['name']}</p>
                             </div>
                             <a href="/pages/medication_edit.php?id=$id" id="edit" class="h-100 d-flex p-2 gap-2 text-decoration-none" style="cursor: pointer;">
