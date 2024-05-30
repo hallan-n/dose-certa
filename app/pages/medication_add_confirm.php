@@ -1,8 +1,9 @@
 <?php
+include 'auth.php';
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    $user_id = $_SESSION['user_id'];
     $name = $_POST['name'];
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
@@ -27,16 +28,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     start_date VARCHAR NOT NULL,
                     end_date VARCHAR NOT NULL,
                     period VARCHAR NOT NULL,
-                    dosage VARCHAR NOT NULL
+                    dosage VARCHAR NOT NULL,
+
+                    user_id INT NOT NULL,
+                    FOREIGN KEY (user_id) REFERENCES users(id)
                 )
             ";
             $conn->exec($createTableQuery);
-            $stmt = $conn->prepare("INSERT INTO medication (name,start_date,end_date,period,dosage) VALUES (:name, :start_date, :end_date, :period, :dosage)");
+            $stmt = $conn->prepare("INSERT INTO medication (name,start_date,end_date,period,dosage,user_id) VALUES (:name, :start_date, :end_date, :period, :dosage, :user_id);");
             $stmt->bindParam(':name',$name);
             $stmt->bindParam(':start_date',$start_datetime);
             $stmt->bindParam(':end_date',$end_datetime);
             $stmt->bindParam(':period',$period);
             $stmt->bindParam(':dosage',$dosage);
+            $stmt->bindParam(':user_id',$user_id);
             $stmt->execute();
             $message = "Adicionado o remédio.";
         } catch (PDOException $e) {

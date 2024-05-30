@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
                 // Redirecionar para a página inicial ou dashboard
                 header("Location: medication_list.php");
-                exit;
+                exit();
             } else {
                 $message = "Senha incorreta.";
             }

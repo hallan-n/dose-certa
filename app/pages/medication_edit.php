@@ -1,4 +1,5 @@
 <?php
+require 'auth.php';
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
