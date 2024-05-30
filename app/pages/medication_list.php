@@ -1,12 +1,12 @@
 <?php
-    session_start();
+    include 'auth.php';
     $results = null;
     $dbPath = 'database.sqlite';
     try {
         $conn = new PDO("sqlite:$dbPath");
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT * FROM medication;";
+        $sql = "SELECT * FROM medication WHERE user_id = ".$_SESSION['user_id'].";";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
