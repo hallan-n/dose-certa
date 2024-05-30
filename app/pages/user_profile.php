@@ -1,5 +1,20 @@
 <?php
     require 'auth.php';
+
+    $results = null;
+    $dbPath = 'database.sqlite';
+    try {
+        $conn = new PDO("sqlite:$dbPath");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql = "SELECT * FROM users WHERE id = ".$_SESSION['user_id'].";";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        $message = "Erro: " . $e->getMessage();
+    }
+    $conn = null;
 ?>
 
 <!DOCTYPE html>
@@ -26,14 +41,14 @@
                 <img src="../assets/images/account-edit.png" alt="" width="100%" style="max-width: 502px;">
             </section>
             <section class="w-100">
-                <form class="d-flex flex-column mx-auto" action="" method="post">
+                <form class="d-flex flex-column mx-auto" action="user_profile_confirm.php" method="post">
                     <h1 class="text-nowrap fw-bold">Editar Perfil</h1>
                     <label class="form-label mt-3" for="text">Nome</label>
-                    <input class="form-control mt-2 p-2" type="text" name="name" id="name">
+                    <input class="form-control mt-2 p-2" type="text" name="name" id="name" value="<?php echo $results[0]['name']; ?>">
                     <label class="form-label mt-3" for="email">Email</label>
-                    <input class="form-control mt-2 p-2" type="email" name="email" id="email">
+                    <input class="form-control mt-2 p-2" type="email" name="email" id="email" value="<?php echo $results[0]['email']; ?>">
                     <label class="form-label mt-3" for="tel">Telefone</label>
-                    <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel">
+                    <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel" value="<?php echo $results[0]['tel']; ?>">
                     <div class="mt-3 d-flex gap-3 "> 
                         <button class="btn btn-primary w-100 p-2" type="submit">Salvar</button>
                         <a href="/pages/medication_list.php" class="btn btn-secondary w-100  p-2" type="submit">Cancelar </a>
