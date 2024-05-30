@@ -32,7 +32,7 @@
                     <input class="form-control mt-2 p-2" type="password" name="confirm_password" id="confirm_password">
                     <div class="mt-3 d-flex gap-3 "> 
                         <button class="btn btn-primary w-100 p-2" type="submit">Salvar</button>
-                        <a href="/" class="btn btn-secondary w-100  p-2" type="submit">Cancelar </a>
+                        <a href="/pages/user_profile.php" class="btn btn-secondary w-100  p-2" type="submit">Voltar</a>
                     </div>
                 </form>
             </section>

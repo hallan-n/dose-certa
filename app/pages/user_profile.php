@@ -32,7 +32,7 @@
                     <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel">
                     <div class="mt-3 d-flex gap-3 "> 
                         <button class="btn btn-primary w-100 p-2" type="submit">Salvar</button>
-                        <a href="/" class="btn btn-secondary w-100  p-2" type="submit">Cancelar </a>
+                        <a href="/pages/medication_list.php" class="btn btn-secondary w-100  p-2" type="submit">Cancelar </a>
                     </div>
                     <a href="/pages/user_password.php" class="btn btn-danger mt-3 w-100  p-2" type="submit">Alterar senha</a>
                 </form>
