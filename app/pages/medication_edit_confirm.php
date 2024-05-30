@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(':dosage', $dosage);
             
             $stmt->execute();
-            $message = "Editado o remédio.";
+            $message = "Medicamento editado!";
         } catch (PDOException $e) {
             $message = "Erro: " . $e->getMessage();
         }
@@ -63,14 +63,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <section>
                 <div class="d-flex flex-column">
                     <span style="font-size: 600%" class="mx-auto material-symbols-outlined">check_circle</span>
-                    <h1 class="fw-bold text-center">Confirmação de adição de medicamento</h1>
+                    <?php if (!empty($message)): ?>
+                        <h1 class="fw-bold text-center"><?php echo htmlspecialchars($message); ?></h1>
+                    <?php endif; ?>
                 </div>
             </section>
             <section>
-                <?php if (!empty($message)): ?>
-                    <p class="text-center"><?php echo htmlspecialchars($message); ?></p>
-                    <?php endif; ?>
-                </section>
             </div>
             <a href="/pages/medication_list.php" class="d-flex align-items-center justify-content-center text-decoration-none mt-5  ">
                 <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>

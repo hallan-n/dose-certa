@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $stmt->bindParam(':password', $hashed_password);
                         $stmt->bindParam(':id', $id);
                         $stmt->execute();
-                        $message = "Senha alterada com sucesso.";
+                        $message = "Senha alterada com sucesso!";
                         session_unset();
                         session_destroy();
                         
@@ -70,13 +70,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <section>
                 <div class="d-flex flex-column">
                     <span style="font-size: 600%" class="mx-auto material-symbols-outlined">check_circle</span>
-                    <h1 class="text-nowrap fw-bold text-center">Confirmação de edição de perfil</h1>
+                    <?php if (!empty($message)): ?>
+                        <h1 class="fw-bold text-center"><?php echo htmlspecialchars($message); ?></h1>
+                    <?php endif; ?>
                 </div>
-            </section>
-            <section>
-                <?php if (!empty($message)) : ?>
-                    <p class="text-center"><?php echo htmlspecialchars($message); ?></p>
-                <?php endif; ?>
             </section>
         </div>
         <a href="/pages/medication_list.php" class="d-flex align-items-center justify-content-center text-decoration-none mt-5  ">

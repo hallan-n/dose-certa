@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 <body>
     <?php include "../assets/shared/header.php" ?>
-    <main class="p-4 mx-auto h-100" style="max-width: 900px;">
+    <main class="px-4 pt-4 mx-auto h-100" style="max-width: 900px; padding-bottom: 100px;">
         <a href="/pages/medication_list.php">
             <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>
         </a>
