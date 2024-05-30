@@ -1,6 +1,7 @@
 <?php
     require 'auth.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -25,7 +26,7 @@
                 <img src="../assets/images/login.jpg" alt="" width="100%" style="max-width: 502px;">
             </section>
             <section class="w-100">
-                <form class="d-flex flex-column mx-auto" action="" method="post">
+                <form class="d-flex flex-column mx-auto" action="user_password_confirm.php" method="post">
                     <h1 class="text-nowrap fw-bold">Editar senha</h1>
                     <label class="form-label mt-3" for="previous">Senha antiga:</label>
                     <input class="form-control mt-2 p-2" type="password" name="previous" id="previous">
