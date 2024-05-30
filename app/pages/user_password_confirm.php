@@ -25,17 +25,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($user) {
                 $stmt = $conn->prepare("UPDATE users SET password = :password WHERE id = :id");
 
-                if (password_verify($previous, $user['password'])&& $new_password === $confirm_password) { 
-                    $hashed_password = password_hash($previous, PASSWORD_DEFAULT);
-                    $stmt->bindParam(':password', $hashed_password);
-                    $stmt->bindParam(':id', $id);
-                    $stmt->execute();
-                    $message = "Senha incorreta";
+                if (password_verify($previous, $user['password']) && $new_password === $confirm_password) {
+                    try {
+
+                        $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+                        $stmt->bindParam(':password', $hashed_password);
+                        $stmt->bindParam(':id', $id);
+                        $stmt->execute();
+                        $message = "Senha alterada com sucesso.";
+                        session_unset();
+                        session_destroy();
+                        
+                    }
+                    catch (PDOException $e){
+                        $message = "Erro: " . $e->getMessage();
+                    }
                 }
             } else {
                 $message = "Usuário não encontrado";
             }
-
         } catch (PDOException $e) {
             $message = "Erro: " . $e->getMessage();
         }
