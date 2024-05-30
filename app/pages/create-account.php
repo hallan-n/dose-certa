@@ -20,9 +20,9 @@
             </section>
             <section>
                 <form class="d-flex flex-column mx-auto" action="create-account_confirm.php" method="post">
-                    <input class="form-control mt-2 p-2" type="text" name="name" id="name" placeholder="Nome" required>
-                    <input class="form-control mt-2 p-2" type="email" name="email" id="email" placeholder="Email" required>
-                    <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel" placeholder="Telefone" required>
+                    <input class="form-control mt-2 p-2" type="text" name="name" id="name" placeholder="Nome" required minlength="3" maxlength="255">
+                    <input class="form-control mt-2 p-2" type="email" name="email" id="email" placeholder="Email" required minlength="3" maxlength="255">
+                    <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel" placeholder="Telefone" required minlength="8" maxlength="11">
                     <input class="form-control mt-2 p-2" type="password" name="password" id="password" placeholder="Senha" required>
                     <a class="text-end mt-4 text-decoration-none fw-bold" href="/">Ja possui conta?</a>
                     <button class="btn btn-primary mt-4 p-2" type="submit">Criar conta</button>

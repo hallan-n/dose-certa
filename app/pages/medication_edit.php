@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <h1 class="text-nowrap fw-bold">Editar Remédio</h1>
                     <input class="form-control p-2" type="hidden" name="id" id="id" value="<?php echo htmlspecialchars($results[0]['id']); ?>" required/>
                     <label class="form-label mt-3" for="name">Nome</label>
-                    <input class="form-control p-2" type="text" name="name" id="name" value="<?php echo htmlspecialchars($results[0]['name']); ?>" required/>
+                    <input class="form-control p-2" type="text" name="name" id="name" value="<?php echo htmlspecialchars($results[0]['name']); ?>" required  minlength="3" maxlength="255"/>
                     <label class="form-label mt-3" for="start_date">Data de início</label>
                     <input class="form-control p-2" type="date" name="start_date" id="start_date" value="<?php echo $start_date_split[0]; ?>" required>
                     <label class="form-label mt-3" for="end_date">Data de término</label>
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                         <option value="12"<?php if (htmlspecialchars($results[0]['period'])=='12')echo'selected'; ?>>Cada 12 horas</option>
                     </select>
                     <label class="form-label mt-3" for="dosage">Dosagem</label>
-                    <input class="form-control p-2" type="text" name="dosage" id="dosage" value="<?php echo htmlspecialchars($results[0]['dosage']); ?>" required>
+                    <input class="form-control p-2" type="text" name="dosage" id="dosage" value="<?php echo htmlspecialchars($results[0]['dosage']); ?>" required minlength="2" maxlength="255">
                     <button class="btn btn-primary mt-4 p-2" type="submit">Confirmar</button>
                     <div class="d-flex gap-2">
                         <label for="teste" class="btn btn-danger mt-2 p-2 w-100">Exluir</label>

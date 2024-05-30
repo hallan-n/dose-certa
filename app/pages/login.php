@@ -70,8 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p class="text-center"><?php echo htmlspecialchars($message); ?></p>
                 <?php endif; ?>
                 <form class="d-flex flex-column mx-auto" action="/pages/login.php" method="post">
-                    <input class="form-control mt-2 p-2" type="email" name="email" id="email" placeholder="Email" required>
-                    <input class="form-control mt-2 p-2" type="password" name="password" id="password" placeholder="Senha" required>
+                    <input class="form-control mt-2 p-2" type="email" name="email" id="email" placeholder="Email" required minlength="3" maxlength="255">
+                    <input class="form-control mt-2 p-2" type="password" name="password" id="password" placeholder="Senha" required minlength="3" maxlength="255">
                     <div class="mt-4 d-flex align-items-center justify-content-between">
                         <a class="text-decoration-none fw-bold" href="./pages/create-account.php">Não possui conta?</a>
                         <div>
