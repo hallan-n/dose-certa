@@ -11,3 +11,16 @@ function setMaxTime(element, maxTime){
         element.value = maxTime; 
     }
 }
+
+function visibilityPass(){
+    const visibilityPass = document.getElementById("visibility-pass")
+    const password = document.getElementById("password")
+
+    if (password.type == "password") {
+        visibilityPass.textContent = "visibility"
+        password.type = "text"
+    }else{
+        visibilityPass.textContent = "visibility_off"
+        password.type = "password"
+    }
+}

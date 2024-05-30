@@ -5,3 +5,15 @@ form{
 main{
     height: 100vh;
 }
+
+.visibility-container{
+    display: inline-flex;
+    align-items: center;
+}
+.visibility-button{
+    width: 0;
+    position: relative;
+    float: right;
+    right: 40px;
+    cursor: pointer;
+}

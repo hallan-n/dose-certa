@@ -48,6 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="shortcut icon" href="../assets/images/favicon.png">
     <title>Login</title>
 </head>
+
 <body>
     <main class="p-5 d-flex align-items-center">
         <div class="w-100">
@@ -67,11 +69,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </section>
             <section>
                 <?php if (isset($message)): ?>
-                    <p class="text-center"><?php echo htmlspecialchars($message); ?></p>
+                <p class="text-center">
+                    <?php echo htmlspecialchars($message); ?>
+                </p>
                 <?php endif; ?>
                 <form class="d-flex flex-column mx-auto" action="/pages/login.php" method="post">
-                    <input class="form-control mt-2 p-2" type="email" name="email" id="email" placeholder="Email" required minlength="3" maxlength="255">
-                    <input class="form-control mt-2 p-2" type="password" name="password" id="password" placeholder="Senha" required minlength="3" maxlength="255">
+                    <input class="form-control mt-2 p-2" type="email" name="email" id="email" placeholder="Email"
+                        required minlength="3" maxlength="255" autocomplete="email">
+                    <div class="visibility-container">
+                        <input class="form-control mt-2 p-2 pe-5" id="password" name="password" placeholder="Senha"
+                            type="password" minlength="3" maxlength="255" autocomplete="current-password" required>
+                        <span onclick="visibilityPass()" id="visibility-pass"
+                            class="material-symbols-outlined pt-2 visibility-button">visibility_off</span>
+                    </div>
                     <div class="mt-4 d-flex align-items-center justify-content-between">
                         <a class="text-decoration-none fw-bold" href="./pages/create-account.php">Não possui conta?</a>
                         <div>
@@ -84,5 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </section>
         </div>
     </main>
+    <script src="../assets/js/utils.js"></script>
 </body>
+
 </html>
