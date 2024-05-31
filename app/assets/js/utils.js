@@ -42,6 +42,11 @@ function verifyPassword(){
  * @param {HTMLInputElement} element - Elemento HTML.
 */
 function phoneMask(element){
+    if (element.value.length > 14) {
+        element.value = element.value.slice(0, -1)
+        return
+    }
+
     let start="", end="", state=""
     element.value = element.value.replace(/\(|\)| |-/g,"")
     if(element.value.length == 8){
@@ -61,4 +66,25 @@ function phoneMask(element){
     }if(element.value.length >= 8){
         element.value = `${state}${start}-${end}`
     }
+}
+
+function validateDate(){
+    const startDate = document.getElementById("start_date")
+    const endDate = document.getElementById("end_date")    
+    let d1 = new Date(startDate.value)
+    let d2 = new Date(endDate.value)            
+    let current = new Date()
+    current.setDate(current.getDate()-1)
+    if(d1 > d2){
+        endDate.setCustomValidity('A data de término precisa ser maior ou igual a data de início!');
+        endDate.reportValidity();
+        setTimeout(()=> endDate.setCustomValidity(''), 1500);
+        return false
+    }else if(d1 < current){
+        startDate.setCustomValidity('A data de início precisa ser maior ou igual a data atual!');
+        startDate.reportValidity();
+        setTimeout(()=> startDate.setCustomValidity(''), 1500);
+        return false
+    }
+    return true;
 }

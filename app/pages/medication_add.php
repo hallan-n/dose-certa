@@ -22,21 +22,19 @@
         </a>
         <div class="w-100">            
             <section>
-                <form class="d-flex flex-column mx-auto" action="medication_add_confirm.php" method="post">
+                <form onsubmit="return validateDate()" class="d-flex flex-column mx-auto" action="medication_add_confirm.php" method="post">
                     <h1 class="text-nowrap fw-bold">Adicionar remédio</h1>
                     <label class="form-label mt-3" for="name">Nome</label>
                     <input class="form-control p-2" type="text" name="name" id="name" minlength="3" maxlength="255" required>
                     <label class="form-label mt-3" for="start_date">Data de início</label>
                     <input class="form-control p-2" type="date" name="start_date" id="start_date" required>
                     <label class="form-label mt-3" for="end_date">Data de término</label>
-                    <input class="form-control p-2" type="date" name="end_date" id="end_date" required>
-
+                    <input class="form-control p-2" type="date" name="end_date" id="end_date" required >
                     <label class="form-label mt-3" for="hora_inicio">Hora de Início</label>
                     <input type="time"
                         class="form-control p-2"
                         name="hora_inicio"
                         id="hora_inicio" required/>
-
                     <label class="form-label mt-3" for="period">Período</label>
                     <select class="form-select p-2" name="period" id="period" required>
                         <option selected disabled value="">Selecione ...</option>
@@ -53,5 +51,6 @@
         </div>
     </main>
     <?php include "../assets/shared/footer.php" ?>
+    <script src="../assets/js/utils.js"></script>
 </body>
 </html>
