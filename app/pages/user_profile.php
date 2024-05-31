@@ -34,11 +34,9 @@
 <body>
     <?php include "../assets/shared/header.php" ?>
     <main class="p-4 mx-auto h-100" style="max-width: 900px;">
-
         <button type="button" data-bs-toggle="modal" data-bs-target="#modal-back" style="all: unset;">
             <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>            
         </button>
-
         <!-- MODAL -->
         <div class="modal fade" id="modal-back" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-hidden="true">
@@ -59,11 +57,6 @@
             </div>
         </div>
         <!-- MODAL -->
-
-
-
-
-
         <div class="w-100 d-flex gap-5 mt-5" id="user_limited">
             <section class="w-100" id="user_img">
                 <img src="../assets/images/account-edit.png" alt="" width="100%" style="max-width: 502px;">
@@ -76,7 +69,7 @@
                     <label class="form-label mt-3" for="email">Email</label>
                     <input class="form-control mt-2 p-2" type="email" name="email" id="email" value="<?php echo $results[0]['email']; ?>" required  minlength="3" maxlength="255">
                     <label class="form-label mt-3" for="tel">Telefone</label>
-                    <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel" value="<?php echo $results[0]['tel']; ?>" required  minlength="3" maxlength="255">
+                    <input oninput="phoneMask(this)" class="form-control mt-2 p-2" type="tel" name="tel" id="tel" value="<?php echo $results[0]['tel']; ?>" required  minlength="8" maxlength="14">
                     <div class="mt-3 d-flex gap-3 "> 
                         <button class="btn btn-primary w-100 p-2" type="button" data-bs-toggle="modal" data-bs-target="#modal-confirm">Salvar</button>
                         <button id="save" class="d-none btn btn-primary w-100 p-2" type="submit">Salvar</button>
@@ -87,8 +80,6 @@
             </section>
         </div>
     </main>
-
-
         <!-- MODAL -->
         <div class="modal fade" id="modal-confirm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-hidden="true">
@@ -109,9 +100,7 @@
             </div>
         </div>
         <!-- MODAL -->
-
-
-
     <?php include "../assets/shared/footer.php" ?>
+    <script src="../assets/js/utils.js"></script>
 </body>
 </html>
