@@ -38,9 +38,34 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <body>
     <?php include "../assets/shared/header.php" ?>
     <main class="px-4 pt-4 mx-auto h-100" style="max-width: 900px; padding-bottom: 100px;">
-        <a href="/pages/medication_list.php">
+
+        <button type="button" data-bs-toggle="modal" data-bs-target="#modal-confirm" style="all: unset;">
             <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>
-        </a>
+            
+        </button>
+
+        <!-- MODAL -->
+        <div class="modal fade" id="modal-confirm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Tem certeza que deseja sair?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><b>Atenção:</b> Se você sair desta página, algumas alterações não serão salvas!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <a class="btn btn-primary" href="/pages/medication_list.php">Confirmar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL -->
+
+
         <div class="w-100">            
             <section>
                 <form class="d-flex flex-column mx-auto" action="medication_edit_confirm.php" method="post">
@@ -73,19 +98,68 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     </select>
                     <label class="form-label mt-3" for="dosage">Dosagem</label>
                     <input class="form-control p-2" type="text" name="dosage" id="dosage" value="<?php echo htmlspecialchars($results[0]['dosage']); ?>" required minlength="2" maxlength="255">
-                    <button class="btn btn-primary mt-4 p-2" type="submit">Confirmar</button>
+
+
+                    <button id="btn-sub" class="d-none btn btn-primary mt-4 p-2" type="submit">Confirmar</button>
+                    <button type="button" class="btn btn-primary mt-4 p-2" data-bs-toggle="modal" data-bs-target="#modal-submit">Confirmar</button>
+
+
+
                     <div class="d-flex gap-2">
-                        <label for="teste" class="btn btn-danger mt-2 p-2 w-100">Exluir</label>
+                        <button type="button" class="btn btn-danger mt-2 p-2 w-100" data-bs-toggle="modal" data-bs-target="#modal">Excluir</button>
                         <a href="/pages/medication_list.php" class="btn btn-secondary mt-2 p-2 w-100">Cancelar</a>
                     </div>
                 </form>
                 <form action="medication_delete_confirm.php" method="post" style="display: none;">
                     <input type="hidden" name="id" id="id" value="<?php echo htmlspecialchars($results[0]['id']); ?>"/>
-                    <button type="submit" id="teste">Enviar teste</button>
+                    <button type="submit" id="delete">Enviar</button>
                 </form>
             </section>
         </div>
     </main>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="modal-submit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Tem certeza que deseja salvar?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><b>Atenção:</b> Os dados do medicamento serão alterados.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <label for="btn-sub" class="btn btn-primary">Salvar</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL -->
+
+
+    <!-- MODAL -->
+    <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Tem certeza que deseja excluir?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><b>Atenção:</b> Se você apagar o medicamento, não será possível reverter a ação.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <label for="delete" class="btn btn-primary">Exluir</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL -->
     <?php include "../assets/shared/footer.php" ?>
 </body>
 </html>

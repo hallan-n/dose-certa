@@ -9,9 +9,31 @@
             <a href="/pages/user_profile.php">
                 <span class="fs-1 me-4 text-light material-symbols-outlined button-header">account_circle</span>
             </a>
-            <a href="/pages/logout.php">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-logout" style="all: unset; cursor: pointer;">
                 <span class="fs-1 text-light material-symbols-outlined button-header">logout</span>
-            </a>
+            </button>
         </div>
     </div>
 </header>
+
+
+<!-- MODAL -->
+<div class="modal fade" id="modal-logout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Tem certeza que deseja fazer logout?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><b>Atenção:</b> Sua sessão será encerra, será preciso fazer login novamente.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <a class="btn btn-primary" href="/pages/logout.php">Confirmar</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL -->

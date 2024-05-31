@@ -34,9 +34,36 @@
 <body>
     <?php include "../assets/shared/header.php" ?>
     <main class="p-4 mx-auto h-100" style="max-width: 900px;">
-        <a href="/pages/medication_list.php">
-            <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>
-        </a>
+
+        <button type="button" data-bs-toggle="modal" data-bs-target="#modal-back" style="all: unset;">
+            <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>            
+        </button>
+
+        <!-- MODAL -->
+        <div class="modal fade" id="modal-back" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Tem certeza que deseja sair?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><b>Atenção:</b> Se você sair desta página, algumas alterações não serão salvas!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <a class="btn btn-primary" href="/pages/medication_list.php">Confirmar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL -->
+
+
+
+
+
         <div class="w-100 d-flex gap-5 mt-5" id="user_limited">
             <section class="w-100" id="user_img">
                 <img src="../assets/images/account-edit.png" alt="" width="100%" style="max-width: 502px;">
@@ -51,7 +78,8 @@
                     <label class="form-label mt-3" for="tel">Telefone</label>
                     <input class="form-control mt-2 p-2" type="tel" name="tel" id="tel" value="<?php echo $results[0]['tel']; ?>" required  minlength="3" maxlength="255">
                     <div class="mt-3 d-flex gap-3 "> 
-                        <button class="btn btn-primary w-100 p-2" type="submit">Salvar</button>
+                        <button class="btn btn-primary w-100 p-2" type="button" data-bs-toggle="modal" data-bs-target="#modal-confirm">Salvar</button>
+                        <button id="save" class="d-none btn btn-primary w-100 p-2" type="submit">Salvar</button>
                         <a href="/pages/medication_list.php" class="btn btn-secondary w-100  p-2" type="submit">Cancelar </a>
                     </div>
                     <a href="/pages/user_password.php" class="btn btn-danger mt-3 w-100  p-2" type="submit">Alterar senha</a>
@@ -59,6 +87,31 @@
             </section>
         </div>
     </main>
+
+
+        <!-- MODAL -->
+        <div class="modal fade" id="modal-confirm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Tem certeza que deseja salvar?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><b>Atenção:</b> Verifique todos os dados antes de salvar!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <label for="save" class="btn btn-primary">Confirmar</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL -->
+
+
+
     <?php include "../assets/shared/footer.php" ?>
 </body>
 </html>

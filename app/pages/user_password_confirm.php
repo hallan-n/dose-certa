@@ -40,6 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     catch (PDOException $e){
                         $message = "Erro: " . $e->getMessage();
                     }
+                }else{
+                    $message = "Senhas divergentes!";
                 }
             } else {
                 $message = "Usuário não encontrado";
@@ -70,14 +72,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="w-100">
             <section>
                 <div class="d-flex flex-column">
-                    <span style="font-size: 600%" class="mx-auto material-symbols-outlined">check_circle</span>
+                    <span style="font-size: 600%" class="mx-auto material-symbols-outlined">error</span>
                     <?php if (!empty($message)): ?>
                         <h1 class="fw-bold text-center"><?php echo htmlspecialchars($message); ?></h1>
                     <?php endif; ?>
                 </div>
             </section>
         </div>
-        <a href="/pages/medication_list.php" class="d-flex align-items-center justify-content-center text-decoration-none mt-5  ">
+        <a href="/pages/user_password.php" class="d-flex align-items-center justify-content-center text-decoration-none mt-5  ">
             <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>
             <p class="text-dark ps-1">Voltar</p>
         </a>

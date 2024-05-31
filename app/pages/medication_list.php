@@ -30,7 +30,6 @@
 <body>
     <?php include "../assets/shared/header.php" ?>
     <main class="p-4 mx-auto" style="max-width: 900px;">
-        <span id="arrow_back" class="material-symbols-outlined p-3 mb-3">arrow_back</span>
         <div class="d-flex justify-content-between mt-4 mb-4">
             <h1 class="text-nowrap fw-bold">Lista de remédios</h1>
             <div id="add-div">
