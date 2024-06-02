@@ -34,7 +34,6 @@
             <h1 class="text-nowrap fw-bold">Lista de remédios</h1>
             <div id="add-div">
                 <div id="add">
-                    <span class="add-bt material-symbols-outlined p-2 me-2">menu</span>
                     <span class="add-bt material-symbols-outlined p-2 me-2">notifications</span>
                     <a href="/pages/medication_add.php" class="text-dark"><span class="add-bt material-symbols-outlined p-3 me-2">add</span></a>
                 </div>
