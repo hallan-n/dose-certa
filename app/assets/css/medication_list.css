@@ -7,24 +7,12 @@
     color: rgb(67, 67, 67);
 }
 
-main{
-    position: relative;
-}
 
-#add{
-    top: 15%;
-    position: fixed;
-    z-index: 1000;
-}
 .add-bt{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.409); 
     cursor: pointer;
     border-radius: 50%;
     background-color: rgb(217, 217, 217);
-}
-#add-div{
-    display: flex;
-    justify-content: end;
 }
 
 .add-bt:hover{
@@ -46,4 +34,17 @@ main{
     #add{
         top: 30%;
     }
+}
+
+#fixed-div{
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    max-width: 863px;
+    top:74.34px;
+    padding-bottom: 20px;
+}
+#fixed-header{
+    width: 100%;
+    position: fixed;
 }
