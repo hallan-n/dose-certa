@@ -6,6 +6,9 @@
             <img src="../assets/images/logo.png" alt="logo" width="100" height="100%">
         </a>
         <div>
+            <a href="/pages/notification_list.php">
+                <span class="fs-1 me-4 text-light material-symbols-outlined button-header">notifications</span>
+            </a>
             <a href="/pages/user_profile.php">
                 <span class="fs-1 me-4 text-light material-symbols-outlined button-header">account_circle</span>
             </a>

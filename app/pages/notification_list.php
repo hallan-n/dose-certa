@@ -35,9 +35,9 @@
                 <img src="../assets/images/logo.png" alt="logo" width="100" height="100%">
             </a>
             <div>
-            <a href="/pages/notification_list.php">
-                <span class="fs-1 me-4 text-light material-symbols-outlined button-header">notifications</span>
-            </a>
+                <a href="/pages/notification_list.php">
+                    <span class="fs-1 me-4 text-light material-symbols-outlined button-header">notifications</span>
+                </a>
                 <a href="/pages/user_profile.php">
                     <span class="fs-1 me-4 text-light material-symbols-outlined button-header">account_circle</span>
                 </a>
@@ -73,39 +73,48 @@
 
     <main class="p-4 mx-auto" style="max-width: 900px;">
         <div id="fixed-div" class="d-flex justify-content-between mt-4 gap-3 pe-5 pt-4">
-            <h1 class="fw-bold">Lista de remédios</h1>
+            <h1 class="fw-bold">Lista de notificações</h1>
             <div>
                 <div class="d-flex flex-nowrap align-items-center gap-2">
-                    <span class="add-bt material-symbols-outlined p-2 me-2" style="width:40px; height:40px;">notifications</span>
+                    
+                    <a href="/pages/notification_list.php">
+                        <span class="add-bt material-symbols-outlined p-2 me-2" style="width:40px; height:40px; color:black;">notifications</span>
+                    </a>
                     <a href="/pages/medication_add.php" class="text-dark"><span class="add-bt material-symbols-outlined p-3 me-2">add</span></a>
                 </div>
             </div>
         </div>
+
+
+
         <div id="medications" class="d-flex flex-wrap gap-2" style="padding-top:200px;">
-            <?php
-                if ($results != null) {
-                    for ($i = 0; $i < count($results); $i++) {
-                        $id = htmlspecialchars($results[$i]["id"]);
-                        echo <<<HTML
-                        <div class="remedy align-items-center rounded"
-                            style="display: inline-flex; gap: 6px; background-color: rgb(202, 202, 202); overflow: hidden;">
-                            <div class="bg-secondary h-100 p-2">
-                                <span class="material-symbols-outlined text-light mt-1 px-2">pill</span>
-                            </div>
-                            <div class="px-2 me-auto">
-                                <p class="m-0 text-secondary" style="font-size: .6rem; text-wrap: nowrap;">A cada {$results[$i]['period']}h</p>
-                                <p class="m-0 text-secondary" style="font-size: .8rem; text-wrap: nowrap;">{$results[$i]['name']}</p>
-                            </div>
-                            <a href="/pages/medication_edit.php?id=$id" id="edit" class="h-100 d-flex p-2 gap-2 text-decoration-none" style="cursor: pointer;">
-                                <div class="bg-secondary" style="width: 2px;">&nbsp;</div>
-                                <span class="material-symbols-outlined px-2 mt-1" style="font-size: 25px;">edit_square</span>
-                            </a>
-                        </div>
-                        HTML;
-                    }
-                }
-            ?>
+
+            <!-- LISTAR ESSA DIV -->
+            <div class="d-flex w-100" style="background-color: rgb(197, 197, 197); max-width: 863px">
+                <div class="bg-secondary d-flex align-items-center p-4">
+                    <span class="material-symbols-outlined text-light mt-1 px-2">notifications_active</span>
+                </div>
+                <div class="p-3 me-auto">
+
+                    <!-- DATA E HORA DA NOTIFICAÇÃO -->
+                    <p>10/10/2010 às 23:59</p>
+                    <!-- DATA E HORA DA NOTIFICAÇÃO -->
+
+                    <!-- MENSAGEM DA NOTIFICAÇÃO -->
+                    <p>Lembrete de tomar <b>20ml</b> do medicamento <b>dipirona</b>!</p>
+                    <!-- MENSAGEM DA NOTIFICAÇÃO -->
+                    
+                </div>
+            </div>
+            <!-- LISTAR ESSA DIV -->
+
         </div>
+
+
+
+
+
+
     </main>
     <?php include "../assets/shared/footer.php" ?>
 </body>
