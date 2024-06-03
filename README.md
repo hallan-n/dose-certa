@@ -11,6 +11,14 @@ Aplicação web responsiva voltada para a área da saúde
 3. Javascript
 4. PHP
 
+## API de SMS:
+Foi usada na aplicação de envio de SMS da empresa COMTELE:
+1. [Empresa](https://comtele.com.br/)
+2. [Documentação da API](https://docs.comtele.com.br/?_ga=2.232330975.1755407992.1655119413-874971166.1632848531#introducao-api-rest )
+
+
+
+
 ## Etapas
 1. Planejamento
     - Definição de objetivos, escopo e requisitos do projeto
