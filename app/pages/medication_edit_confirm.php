@@ -1,4 +1,6 @@
 <?php
+
+require_once 'Notification.php';
 require 'auth.php';
 $message = "";
 
@@ -36,6 +38,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(':dosage', $dosage);
             
             $stmt->execute();
+
+             // Deletar notificações existentes
+             $notificationManager = new Notification();
+             $notificationManager->deleteNotifications($conn, $id);
+ 
+             // Adicionar novas notificações
+             $notificationManager->addNotifications($conn, $id, $start_datetime, $end_datetime, $period);
+             
             $message = "Medicamento editado!";
         } catch (PDOException $e) {
             $message = "Erro: " . $e->getMessage();
