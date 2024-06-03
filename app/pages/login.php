@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             class="material-symbols-outlined pt-2 visibility-button">visibility_off</span>
                     </div>
                     <div class="mt-4 d-flex align-items-center justify-content-between">
-                        <a class="text-decoration-none fw-bold" href="./pages/create-account.php">Não possui conta?</a>
+                        <a class="text-decoration-none fw-bold" href="pages/create-account.php">Não possui conta?</a>
                         <div>
                             <input type="checkbox" name="remember" id="remember">
                             <label for="remember">Lembrar de mim</label>

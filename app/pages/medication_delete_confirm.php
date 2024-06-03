@@ -1,4 +1,7 @@
 <?php
+
+require_once 'Notification.php';
+
 require 'auth.php';
 $message = "";
 
@@ -8,6 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $conn = new PDO("sqlite:$dbPath");
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $notificationManager = new Notification();
+        $notificationManager->deleteNotifications($conn, $id);
+        
         $query = "DELETE FROM medication WHERE id = ".$id;
         $stmt = $conn->prepare($query);
         $stmt->execute();

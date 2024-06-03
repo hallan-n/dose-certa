@@ -1,4 +1,8 @@
 <?php
+
+require_once 'Notification.php';
+
+
 include 'auth.php';
 $message = "";
 
@@ -43,7 +47,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(':dosage',$dosage);
             $stmt->bindParam(':user_id',$user_id);
             $stmt->execute();
+
+            $medication_id = $conn->lastInsertId(); 
+
+            $notificationManager = new Notification();
+            $notificationManager->addNotifications($conn, $medication_id,$start_datetime, $end_datetime, $period);
             $message = "Medicamento adicionado!";
+
         } catch (PDOException $e) {
             $message = "Erro: " . $e->getMessage();
         }

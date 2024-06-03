@@ -22,7 +22,8 @@ if ($notifications) {
 
     foreach ($notifications as $notification) {
         $sender = '77282';
-        $receivers = '+55' . $notification['user_phone'];
+        $notification['user_phone_number'] = str_replace(['(', ')', '-'], '', $notification['user_phone']);
+        $receivers = '+55' . $notification['user_phone_number'];
         $notificationTime = (new DateTime($notification['notification_datetime']))->format('H:i');
         $content = 'Você tem uma nova notificação de medicação: ' . $notification['medication_name'] . ' às ' . $notificationTime;
 

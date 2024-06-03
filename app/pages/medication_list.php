@@ -76,7 +76,8 @@
             <h1 class="fw-bold">Lista de remédios</h1>
             <div>
                 <div class="d-flex flex-nowrap align-items-center gap-2">
-                    <span class="add-bt material-symbols-outlined p-2 me-2" style="width:40px; height:40px;">notifications</span>
+                <a href="/pages/notification_list.php" class="text-dark">
+                    <span class="add-bt material-symbols-outlined p-2 me-2" style="width:40px; height:40px;">notifications</span></a>
                     <a href="/pages/medication_add.php" class="text-dark"><span class="add-bt material-symbols-outlined p-3 me-2">add</span></a>
                 </div>
             </div>
